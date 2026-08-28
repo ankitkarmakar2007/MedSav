@@ -1,5 +1,6 @@
 import os
 import json
+import base64
 
 from dotenv import load_dotenv
 
@@ -21,63 +22,73 @@ load_dotenv()
 firebase_credentials = None
 
 
-# ---------------------------------------------------------
-# LOCAL DEVELOPMENT
-# ---------------------------------------------------------
-# If firebase-key.json exists, use it locally.
-# ---------------------------------------------------------
+# =========================================================
+# PRODUCTION / VERCEL
+# =========================================================
+# Vercel stores the Firebase service-account JSON as
+# a Base64 string to avoid private-key formatting issues.
+# =========================================================
 
-firebase_key_file = os.path.join(
-    os.path.dirname(__file__),
-    "firebase-key.json"
+firebase_service_account_b64 = os.getenv(
+    "FIREBASE_SERVICE_ACCOUNT_B64"
 )
 
 
-if os.path.exists(firebase_key_file):
-
-    with open(
-        firebase_key_file,
-        "r",
-        encoding="utf-8"
-    ) as file:
-
-        firebase_credentials = json.load(
-            file
-        )
-
-
-# ---------------------------------------------------------
-# PRODUCTION / VERCEL
-# ---------------------------------------------------------
-# If the local JSON file is not available,
-# use FIREBASE_SERVICE_ACCOUNT.
-# ---------------------------------------------------------
-
-if firebase_credentials is None:
-
-    firebase_service_account = os.getenv(
-        "FIREBASE_SERVICE_ACCOUNT"
-    )
-
-
-    if not firebase_service_account:
-
-        raise RuntimeError(
-            "Firebase credentials not found."
-        )
-
+if firebase_service_account_b64:
 
     try:
 
-        firebase_credentials = json.loads(
-            firebase_service_account
+        decoded_json = base64.b64decode(
+            firebase_service_account_b64
+        ).decode(
+            "utf-8"
         )
 
-    except json.JSONDecodeError as error:
+        firebase_credentials = json.loads(
+            decoded_json
+        )
+
+    except Exception as error:
 
         raise RuntimeError(
-            "FIREBASE_SERVICE_ACCOUNT contains invalid JSON."
+            "FIREBASE_SERVICE_ACCOUNT_B64 is invalid."
         ) from error
+
+
+# =========================================================
+# LOCAL DEVELOPMENT FALLBACK
+# =========================================================
+
+if firebase_credentials is None:
+
+    firebase_key_file = os.path.join(
+        os.path.dirname(__file__),
+        "firebase-key.json"
+    )
+
+
+    if os.path.exists(firebase_key_file):
+
+        with open(
+            firebase_key_file,
+            "r",
+            encoding="utf-8"
+        ) as file:
+
+            firebase_credentials = json.load(
+                file
+            )
+
+
+# =========================================================
+# CHECK CREDENTIALS
+# =========================================================
+
+if firebase_credentials is None:
+
+    raise RuntimeError(
+        "Firebase credentials not found."
+    )
 
 
 # =========================================================
