@@ -4626,7 +4626,7 @@ async function initMediFindMap() {
            Load Google Maps.
         */
 
-        await loadGoogleMaps();
+        await loadGoogleMapsScript();
 
 
         /*
