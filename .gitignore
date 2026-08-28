@@ -1,0 +1,21 @@
+# Firebase credentials
+backend/firebase-key.json
+firebase-key.json
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# VS Code
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db

@@ -1,0 +1,2056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MedSav - Medicine Found Smarter</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+</head>
+
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="header">
+
+        <div class="logo">
+
+            <img src = "MedSav.jpeg" width="40" height="40">
+            <span class="logo-text">MedSav</span>
+
+        </div>
+
+
+        <nav class="navbar">
+
+            <a href="#home" class="active">Home</a>
+            <a href="#discover">Discover</a>
+            <a href="#how-it-works">How It Works</a>
+            <a href="#pharmacies">For Pharmacies</a>
+
+        </nav>
+
+
+        <div class="header-buttons">
+
+            <button class="signin-btn">
+                Sign in
+            </button>
+
+            <button class="get-started-btn">
+                Get Started
+            </button>
+
+        </div>
+
+
+        <button class="menu-btn" id="menu-btn">
+            ☰
+        </button>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="hero-left">
+
+                <h1>
+                    Medicine,<br>
+                    found <span>smarter.</span>
+                </h1>
+
+
+                <p class="hero-description">
+                    Find the right medicine, compare nearby prices,
+                    and discover suitable stock before it expires.
+                </p>
+
+
+
+                <!-- SEARCH -->
+
+                <div class="search-container">
+
+                    <div class="search-icon">
+                        <i data-lucide="search"></i>
+                    </div>
+
+                    <input
+                        type="text"
+                        id="medicine-search"
+                        placeholder="Search medicines, brands or prescriptions..."
+                    >
+
+                    <button
+                        type="button"
+                        id="search-btn"
+                        class="search-btn"
+                    >
+                        <i data-lucide="search"></i>
+                        Search
+                    </button>
+
+                    <button
+                        type="button"
+                        id="nearby-btn"
+                        class="nearby-btn"
+                    >
+                        <span>
+                            <i data-lucide="crosshair"></i>
+                        </span>
+                        Nearby
+                    </button>
+
+                </div>
+
+                <p id="search-message" class="search-message"></p>
+
+
+
+                <!-- TRAVEL COST SETTINGS -->
+
+                <div class="travel-settings">
+
+
+                    <div class="travel-setting">
+
+                        <span class="travel-setting-icon">
+                            <i data-lucide="car"></i>
+                        </span>
+
+
+                        <div>
+
+                            <label for="mileage">
+                                Vehicle mileage
+                            </label>
+
+
+                            <div class="input-with-unit">
+
+                                <input
+                                    type="number"
+                                    id="mileage"
+                                    value="15"
+                                    min="1"
+                                    placeholder="15"
+                                >
+
+                                <span>
+                                    km/L
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="travel-divider"></div>
+
+
+
+                    <div class="travel-setting">
+
+                        <span class="travel-setting-icon">
+                            <i data-lucide="fuel"></i>
+                        </span>
+
+
+                        <div>
+
+                            <label for="fuel-price">
+                                Fuel price
+                            </label>
+
+
+                            <div class="input-with-unit">
+
+                                <span>
+                                    ₹
+                                </span>
+
+
+                                <input
+                                    type="number"
+                                    id="fuel-price"
+                                    value="100"
+                                    min="1"
+                                    placeholder="100"
+                                >
+
+
+                                <span>
+                                    /L
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="travel-info">
+
+                        <span>
+                            TRAVEL COST
+                        </span>
+
+                        <strong>
+                            Included in recommendation
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- USER TYPES -->
+
+                <div class="user-types">
+
+
+                    <!-- PATIENT -->
+
+                    <div class="user-type">
+
+                        <div class="user-icon patient-icon">
+
+                            <i data-lucide="user-round"></i>
+
+                        </div>
+
+
+                        <div class="user-content">
+
+                            <span class="user-title patient-title">
+                                PATIENT
+                            </span>
+
+
+                            <p>
+                                Search medicines, compare
+                                prices and locate nearby stock.
+                            </p>
+
+
+                            <button class="enter-btn">
+
+                                Enter as Patient
+
+                                <span>
+                                    →
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="vertical-line"></div>
+
+
+
+                    <!-- PHARMACY -->
+
+                    <div class="user-type">
+
+                        <div class="user-icon pharmacy-icon">
+
+                            <i data-lucide="store"></i>
+
+                        </div>
+
+
+                        <div class="user-content">
+
+                            <span class="user-title pharmacy-title">
+                                PHARMACY
+                            </span>
+
+
+                            <p>
+                                Manage stock, reach customers
+                                and reduce expiry losses.
+                            </p>
+
+
+                            <button class="enter-btn pharmacy-enter">
+
+                                Enter as Pharmacy
+
+                                <span>
+                                    →
+                                </span>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT SIDE MAP -->
+
+            <div class="hero-right">
+
+                <div class="map-background">
+
+                        <!-- REAL GOOGLE MAP -->
+                        <div id="google-map"></div>
+
+                        <!-- YOUR EXISTING PRICE CARD -->
+                        <div class="price-card">
+
+                            <div class="medicine-heading">
+
+                                <div class="medicine-small-icon">
+                                    <i data-lucide="pill"></i>
+                                </div>
+
+                                <div>
+                                    <strong id="selected-medicine">
+                                        Paracetamol 500 mg
+                                    </strong>
+
+                                    <small>
+                                        Tablet
+                                    </small>
+                                </div>
+
+                            </div>
+
+
+                            <div class="pharmacy-nearby">
+                                ⌖ &nbsp; 8 pharmacies nearby
+                            </div>
+
+
+                            <div class="pharmacy-price">
+
+                                <span>
+                                    Apollo Pharmacy
+                                </span>
+
+                                <small>
+                                    0.8 km
+                                </small>
+
+                                <strong id="map-apollo-price">
+                                    ₹--
+                                </strong>
+
+                            </div>
+
+
+                            <div class="pharmacy-price">
+
+                                <span>
+                                    City Medicals
+                                </span>
+
+                                <small>
+                                    1.2 km
+                                </small>
+
+                                <strong id="map-city-price">
+                                    ₹--
+                                </strong>
+
+                            </div>
+
+
+                            <div class="pharmacy-price">
+
+                                <span>
+                                    HealthPoint
+                                </span>
+
+                                <small>
+                                    1.7 km
+                                </small>
+
+                                <strong id="map-healthpoint-price">
+                                    ₹--
+                                </strong>
+
+                            </div>
+
+
+                            <button
+                                class="compare-btn"
+                                id="compare-all-btn"
+                            >
+                                Compare all →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PRICE CARD -->
+
+                    <div class="price-card">
+
+                        <div class="medicine-heading">
+
+                            <div class="medicine-small-icon">
+
+                                <i data-lucide="pill"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong id="selected-medicine">
+                                    Paracetamol 500 mg
+                                </strong>
+
+                                <small>
+                                    Tablet
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="pharmacy-nearby">
+                            ⌖ &nbsp; 8 pharmacies nearby
+                        </div>
+
+
+
+                        <div class="pharmacy-price">
+
+                            <span>
+                                Apollo Pharmacy
+                            </span>
+
+                            <small>
+                                0.8 km
+                            </small>
+
+                            <strong>
+                                ₹24
+                            </strong>
+
+                        </div>
+
+
+                        <div class="pharmacy-price">
+
+                            <span>
+                                City Medicals
+                            </span>
+
+                            <small>
+                                1.2 km
+                            </small>
+
+                            <strong>
+                                ₹22
+                            </strong>
+
+                        </div>
+
+
+                        <div class="pharmacy-price">
+
+                            <span>
+                                HealthPoint
+                            </span>
+
+                            <small>
+                                1.7 km
+                            </small>
+
+                            <strong>
+                                ₹26
+                            </strong>
+
+                        </div>
+
+
+                        <button class="compare-btn" id="compare-all-btn">
+                            Compare all →
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+             SMART ALTERNATIVE MEDICINE SECTION
+        ========================================================== -->
+
+        <section
+            class="alternative-section"
+            id="alternative-section"
+        >
+
+
+            <!-- Section Header -->
+
+            <div class="alternative-header">
+
+                <div>
+
+                    <span class="section-label">
+                        SMART ALTERNATIVE
+                    </span>
+
+
+                    <h2>
+                        Save Money with a Suitable Alternative
+                    </h2>
+
+
+                    <p>
+                        Compare the searched medicine with suitable
+                        alternatives having the same active composition.
+                    </p>
+
+                </div>
+
+
+                <div class="saving-badge">
+                    Save More
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================================
+                 MEDICINE COMPARISON
+            ====================================================== -->
+
+            <div class="medicine-comparison">
+
+
+                <!-- =================================================
+                     ORIGINAL MEDICINE CARD
+                ================================================== -->
+
+                <div class="medicine-card original-card">
+
+
+                    <!-- Card Header -->
+
+                    <div class="medicine-card-top">
+
+                        <span class="medicine-type original-type">
+                            ORIGINAL MEDICINE
+                        </span>
+
+
+                        <span class="medicine-company">
+                            Patent Brand
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Medicine Information -->
+
+                    <div class="medicine-info">
+
+
+                        <div class="medicine-icon">
+
+                            <i data-lucide="pill"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3 id="original-medicine-name">
+                                Crocin Advance
+                            </h3>
+
+
+                            <p id="original-composition">
+                                Paracetamol 500mg
+                            </p>
+
+
+                            <span
+                                class="manufacturer"
+                                id="original-company"
+                            >
+                                Example Pharma
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Original Medicine Price -->
+
+                    <div class="price-area">
+
+                        <div>
+
+                            <span>
+                                Current price
+                            </span>
+
+
+                            <strong id="original-price">
+                                ₹500
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         PRESCRIPTION REQUIREMENT
+                    ================================================== -->
+
+                    <div
+                        class="prescription-box"
+                        id="prescription-box"
+                        style="display: block;"
+                    >
+
+                        <div class="prescription-status">
+
+                            <div class="prescription-icon">
+                                <i
+                                    id="prescription-icon"
+                                    data-lucide="file-lock-2"
+                                ></i>
+                            </div>
+
+                            <div>
+
+                                <span id="prescription-title">
+                                    Prescription Required
+                                </span>
+
+                                <p id="prescription-message">
+                                    This alternate medicine requires a valid
+                                    prescription before it can be purchased.
+                                </p>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- Call Doctor -->
+                        <button
+                            class="call-doctor-btn"
+                            id="call-doctor-btn"
+                            href="tel:+916296030375"
+                            onclick="callDoctor()"
+                        >
+
+                            <i data-lucide="phone"></i>
+
+                            Call Doctor
+
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =================================================
+                     COMPARISON ARROW
+                ================================================== -->
+
+                <div class="comparison-arrow">
+
+                    <i data-lucide="arrow-right"></i>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     BEST ALTERNATIVE MEDICINE CARD
+                ================================================== -->
+
+                <div class="medicine-card alternative-card">
+
+
+                    <!-- Card Header -->
+
+                    <div class="medicine-card-top">
+
+                        <span class="medicine-type alternative-type">
+                            BEST ALTERNATIVE
+                        </span>
+
+
+                        <span class="verified-badge">
+
+                            <i data-lucide="badge-check"></i>
+
+                            Verified
+
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- Alternative Medicine Information -->
+
+                    <div class="medicine-info">
+
+
+                        <div class="medicine-icon alternative-icon">
+
+                            <i data-lucide="pill"></i>
+
+                        </div>
+
+
+                        <div>
+
+                            <h3 id="alternative-medicine-name">
+                                Generic Paracetamol
+                            </h3>
+
+
+                            <p id="alternative-composition">
+                                Paracetamol 500mg
+                            </p>
+
+
+                            <span
+                                class="manufacturer"
+                                id="alternative-company"
+                            >
+                                Generic Pharma
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Alternative Price -->
+
+                    <div class="price-area alternative-price-area">
+
+
+                        <div>
+
+                            <span>
+                                Alternative price
+                            </span>
+
+
+                            <strong id="alternative-price">
+                                ₹50
+                            </strong>
+
+                        </div>
+
+
+                        <div class="saving">
+
+                            Save
+
+                            <span id="saving-percent">
+                                90%
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         ALTERNATIVE DETAILS
+                    ================================================== -->
+
+                    <div class="alternative-details">
+
+
+                        <!-- Composition -->
+
+                        <div class="detail-item">
+
+                            <i data-lucide="flask-conical"></i>
+
+
+                            <div>
+
+                                <small>
+                                    Active composition
+                                </small>
+
+
+                                <strong id="composition-status">
+                                    Same composition
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Safety -->
+
+                        <div class="detail-item">
+
+                            <i data-lucide="shield-check"></i>
+
+
+                            <div>
+
+                                <small>
+                                    Safety information
+                                </small>
+
+
+                                <strong id="safety-status">
+                                    Review required
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- Doctor Guidance -->
+
+                        <div class="detail-item">
+
+                            <i data-lucide="stethoscope"></i>
+
+
+                            <div>
+
+                                <small>
+                                    Medical guidance
+                                </small>
+
+
+                                <strong id="doctor-status">
+                                    Consult doctor/pharmacist
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =================================================
+                         FIND ALTERNATIVE NEARBY
+                    ================================================== -->
+
+                    <button
+                        class="find-alternative-btn"
+                        onclick="searchAlternative()"
+                    >
+
+                        <i data-lucide="map-pin"></i>
+
+                        Find This Medicine Nearby
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================================
+                 SAVINGS INFORMATION
+            ====================================================== -->
+
+            <div class="saving-summary">
+
+
+                <div class="saving-summary-icon">
+
+                    <i data-lucide="wallet"></i>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+
+                        You could save
+
+                        <span id="total-saving">
+                            ₹0
+                        </span>
+
+                    </strong>
+
+
+                    <p>
+                        compared with the original medicine.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =====================================================
+                 MEDICAL DISCLAIMER
+            ====================================================== -->
+
+            <div class="alternative-disclaimer">
+
+
+                <i data-lucide="info"></i>
+
+
+                <p>
+
+                    Alternatives shown should have the same active
+                    composition, but medicines are not automatically
+                    interchangeable for every patient. Always confirm
+                    with a doctor or pharmacist before switching medicines.
+
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- =========================================================
+     PHARMACY RESULTS
+     Hidden by default — activated by Compare All button
+========================================================= -->
+
+<section
+    class="pharmacy-results-section"
+    id="pharmacy-results-section"
+>
+
+    <!-- =========================
+         RESULTS HEADER
+    ========================== -->
+
+    <div class="pharmacy-results-header">
+
+        <div>
+
+            <span class="section-label">
+                RESULTS FOR
+            </span>
+
+            <h2 id="results-medicine-name">
+                Paracetamol 500 mg
+            </h2>
+
+            <p>
+                Paracetamol · Tablet · 1 tablet twice daily
+            </p>
+
+        </div>
+
+
+        <div class="live-stock">
+
+            <span></span>
+
+            Live stock
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PHARMACY RESULTS
+    ========================== -->
+
+    <div class="pharmacy-results-list" id="pharmacy-results-list">
+    
+    <!-- Pharmacy cards will be generated dynamically by JavaScript -->
+
+    </div>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <div class="pharmacy-results-footer">
+
+        <i data-lucide="info"></i>
+
+        Stock availability is updated by participating pharmacies.
+        Please call the store before travelling.
+
+    </div>
+
+</section>
+        <!-- =========================================================
+             SMART RECOMMENDATIONS
+        ========================================================== -->
+
+        <section
+            class="recommendation-section"
+            id="discover"
+        >
+
+
+            <div class="recommendation-intro">
+
+
+                <div class="leaf-icon">
+
+                    <i data-lucide="shield-check"></i>
+
+                </div>
+
+
+                <h2>
+
+                    Smart recommendations<br>
+                    that consider what matters.
+
+                </h2>
+
+
+                <p>
+
+                    Our engine factors in your required quantity
+                    and treatment duration before suggesting
+                    near-expiry options that truly make sense.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="need-box">
+
+                <span>
+                    YOUR NEED
+                </span>
+
+                <div class="calendar-icon">
+                    <i data-lucide="calendar-days"></i>
+                </div>
+
+                <button
+                    type="button"
+                    id="duration-button"
+                    class="duration-button"
+                >
+                    30-day supply
+                </button>
+
+            </div>
+
+            
+
+            <!-- ==========================================
+                TREATMENT DURATION POPUP
+            ========================================== -->
+
+            <div
+                id="duration-modal"
+                class="duration-modal"
+            >
+
+                <div
+                    class="duration-modal-overlay"
+                    id="duration-modal-overlay"
+                ></div>
+
+
+                <div class="duration-modal-content">
+
+                    <button
+                        type="button"
+                        id="duration-close"
+                        class="duration-close"
+                    >
+                        ×
+                    </button>
+
+
+                    <h3>
+                        Select Treatment Duration
+                    </h3>
+
+                    <p>
+                        Enter the number of days you need medicine for.
+                    </p>
+
+
+                    <label for="duration-input">
+                        Number of days
+                    </label>
+
+                    <input
+                        type="number"
+                        id="duration-input"
+                        min="1"
+                        max="3650"
+                        value="30"
+                        placeholder="Enter days"
+                    >
+
+
+                    <button
+                        type="button"
+                        id="duration-apply"
+                        class="duration-apply"
+                    >
+                        Apply
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            
+
+        </section>
+
+
+
+        <!-- =========================================================
+             HOW IT WORKS
+        ========================================================== -->
+
+        <section
+            class="how-section"
+            id="how-it-works"
+        >
+
+
+            <h2>
+                How it works
+            </h2>
+
+
+            <div class="steps">
+
+
+                <!-- STEP 1 -->
+
+                <div class="step">
+
+
+                    <div class="step-icon">
+
+                        <i data-lucide="search"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            SEARCH
+                        </span>
+
+
+                        <p>
+                            Find your medicine
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="step-arrow">
+                    ➜
+                </div>
+
+
+
+                <!-- STEP 2 -->
+
+                <div class="step">
+
+
+                    <div class="step-icon">
+
+                        ☷
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            COMPARE
+                        </span>
+
+
+                        <p>
+
+                            Compare nearby prices<br>
+                            and expiry
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="step-arrow">
+                    ➜
+                </div>
+
+
+
+                <!-- STEP 3 -->
+
+                <div class="step">
+
+
+                    <div class="step-icon">
+
+                        ✓
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            RECOMMEND
+                        </span>
+
+
+                        <p>
+
+                            Get smart suggestions<br>
+                            based on your need
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="step-arrow">
+                    ➜
+                </div>
+
+
+
+                <!-- STEP 4 -->
+
+                <div class="step">
+
+
+                    <div class="step-icon">
+
+                        <i data-lucide="shopping-bag"></i>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            CHOOSE
+                        </span>
+
+
+                        <p>
+
+                            Pick the best option<br>
+                            and save more
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =========================================================
+             PHARMACY SECTION
+        ========================================================== -->
+
+        <section
+            class="pharmacy-section"
+            id="pharmacies"
+        >
+
+
+            <div>
+
+
+                <span class="section-label">
+                    FOR PHARMACIES
+                </span>
+
+
+                <h2>
+
+                    Reduce medicine waste.<br>
+                    Reach the right customers.
+
+                </h2>
+
+
+                <p>
+
+                    List your medicine stock, expiry dates and prices.
+                    MediFind helps nearby patients discover suitable
+                    medicines before they expire.
+
+                </p>
+
+
+                <button class="pharmacy-cta">
+                    List Your Pharmacy →
+                </button>
+
+            </div>
+
+
+
+            <div class="benefits">
+
+
+                <div class="benefit">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    Reduce expiry-related losses
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    Reach nearby customers
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    Sell near-expiry stock responsibly
+
+                </div>
+
+
+                <div class="benefit">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    Manage medicine inventory
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =============================================================
+         FOOTER
+    ============================================================== -->
+
+    <footer>
+
+
+        <div class="footer-brand">
+
+
+            <div class="logo">
+ <img src = "MedSav.jpeg" width="40" height="40">
+                <span class="logo-text">
+                    MedSav
+                </span>
+
+            </div>
+
+
+            <p>
+                Smarter access to medicines.
+            </p>
+
+        </div>
+
+
+
+        <div class="footer-links">
+
+            <a href="#home">
+                Home
+            </a>
+
+            <a href="#discover">
+                Discover
+            </a>
+
+            <a href="#how-it-works">
+                How It Works
+            </a>
+
+            <a href="#">
+                About
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+            <a href="#">
+                Patient Login
+            </a>
+
+            <a href="#">
+                Pharmacy Login
+            </a>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            Medicine availability and pricing information only.
+            This platform does not replace professional medical advice.
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =============================================================
+         JAVASCRIPT
+    ============================================================== -->
+
+    <script src="script.js"></script>
+
+
+    <!-- Initialize Lucide Icons -->
+
+    <script>
+
+        if (typeof lucide !== "undefined") {
+            lucide.createIcons();
+        }
+
+    </script>
+
+<!-- ==========================================
+     PHARMACY COMPARISON MODAL
+========================================== -->
+
+<div
+    class="pharmacy-modal"
+    id="pharmacy-modal"
+>
+
+
+    <div class="pharmacy-modal-overlay" id="modal-overlay"></div>
+
+
+    <div class="pharmacy-modal-content">
+
+
+        <!-- HEADER -->
+
+        <div class="pharmacy-modal-header">
+
+            <div>
+
+                <span class="section-label">
+                    NEARBY PHARMACIES
+                </span>
+
+                <h2>
+                    Medicine available near you
+                </h2>
+
+                <p id="modal-medicine-name">
+                    Paracetamol 500 mg
+                </p>
+
+            </div>
+
+
+            <button
+                class="close-modal"
+                id="close-modal"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+
+        <!-- STOCK LEGEND -->
+
+        <div class="stock-legend">
+
+            <div class="legend-item">
+
+                <span class="legend-dot good-dot"></span>
+
+                <span>
+                    Good stock
+                </span>
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span class="legend-dot average-dot"></span>
+
+                <span>
+                    Average stock
+                </span>
+
+            </div>
+
+
+            <div class="legend-item">
+
+                <span class="legend-dot low-dot"></span>
+
+                <span>
+                    Low stock
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PHARMACY LIST -->
+
+        <div
+            class="pharmacy-list"
+            id="pharmacy-list"
+        >
+
+
+            <!-- APOLLO -->
+
+            <div
+                class="store-row"
+                data-store="Apollo Pharmacy"
+            >
+
+                <div class="store-main">
+
+                    <div class="store-icon good-store">
+
+                        <i data-lucide="store"></i>
+
+                    </div>
+
+
+                    <div class="store-info">
+
+                        <h3>
+                            Apollo Pharmacy
+                        </h3>
+
+
+                        <div class="store-distance">
+
+                            <i data-lucide="map-pin"></i>
+
+                            0.8 km away
+
+                        </div>
+
+
+                        <div class="store-time">
+
+                            <i data-lucide="clock-3"></i>
+
+                            8:00 AM – 10:00 PM
+
+                            <span class="open-status">
+                                Open
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stock-info">
+
+                    <span class="stock-label good-label">
+                        GOOD STOCK
+                    </span>
+
+
+                    <strong>
+                        48 units
+                    </strong>
+
+
+                    <span>
+                        ₹24
+                    </span>
+
+                </div>
+
+
+
+                <div class="store-actions">
+
+                    <a
+                        href="tel:+919876543210"
+                        class="call-store-btn"
+                    >
+
+                        <i data-lucide="phone"></i>
+
+                        Call
+
+                    </a>
+
+
+                    <button
+                        class="map-store-btn"
+                        onclick="focusPharmacy('Apollo Pharmacy')"
+                    >
+
+                        <i data-lucide="map"></i>
+
+                        Map
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CITY MEDICALS -->
+
+            <div
+                class="store-row"
+                data-store="City Medicals"
+            >
+
+                <div class="store-main">
+
+                    <div class="store-icon average-store">
+
+                        <i data-lucide="store"></i>
+
+                    </div>
+
+
+                    <div class="store-info">
+
+                        <h3>
+                            City Medicals
+                        </h3>
+
+
+                        <div class="store-distance">
+
+                            <i data-lucide="map-pin"></i>
+
+                            1.2 km away
+
+                        </div>
+
+
+                        <div class="store-time">
+
+                            <i data-lucide="clock-3"></i>
+
+                            9:00 AM – 9:00 PM
+
+                            <span class="open-status">
+                                Open
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stock-info">
+
+                    <span class="stock-label average-label">
+                        AVERAGE STOCK
+                    </span>
+
+
+                    <strong>
+                        17 units
+                    </strong>
+
+
+                    <span>
+                        ₹22
+                    </span>
+
+                </div>
+
+
+
+                <div class="store-actions">
+
+                    <a
+                        href="tel:+919876543211"
+                        class="call-store-btn"
+                    >
+
+                        <i data-lucide="phone"></i>
+
+                        Call
+
+                    </a>
+
+
+                    <button
+                        class="map-store-btn"
+                        onclick="focusPharmacy('City Medicals')"
+                    >
+
+                        <i data-lucide="map"></i>
+
+                        Map
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HEALTHPOINT -->
+
+            <div
+                class="store-row"
+                data-store="HealthPoint"
+            >
+
+                <div class="store-main">
+
+                    <div class="store-icon low-store">
+
+                        <i data-lucide="store"></i>
+
+                    </div>
+
+
+                    <div class="store-info">
+
+                        <h3>
+                            HealthPoint
+                        </h3>
+
+
+                        <div class="store-distance">
+
+                            <i data-lucide="map-pin"></i>
+
+                            1.7 km away
+
+                        </div>
+
+
+                        <div class="store-time">
+
+                            <i data-lucide="clock-3"></i>
+
+                            10:00 AM – 8:00 PM
+
+                            <span class="closed-status">
+                                Closed
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stock-info">
+
+                    <span class="stock-label low-label">
+                        LOW STOCK
+                    </span>
+
+
+                    <strong>
+                        4 units
+                    </strong>
+
+
+                    <span>
+                        ₹26
+                    </span>
+
+                </div>
+
+
+
+                <div class="store-actions">
+
+                    <a
+                        href="tel:+919876543212"
+                        class="call-store-btn"
+                    >
+
+                        <i data-lucide="phone"></i>
+
+                        Call
+
+                    </a>
+
+
+                    <button
+                        class="map-store-btn"
+                        onclick="focusPharmacy('HealthPoint')"
+                    >
+
+                        <i data-lucide="map"></i>
+
+                        Map
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- MEDICARE -->
+
+            <div
+                class="store-row"
+                data-store="MediCare Pharmacy"
+            >
+
+                <div class="store-main">
+
+                    <div class="store-icon good-store">
+
+                        <i data-lucide="store"></i>
+
+                    </div>
+
+
+                    <div class="store-info">
+
+                        <h3>
+                            MediCare Pharmacy
+                        </h3>
+
+
+                        <div class="store-distance">
+
+                            <i data-lucide="map-pin"></i>
+
+                            2.1 km away
+
+                        </div>
+
+
+                        <div class="store-time">
+
+                            <i data-lucide="clock-3"></i>
+
+                            7:30 AM – 11:00 PM
+
+                            <span class="open-status">
+                                Open
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="stock-info">
+
+                    <span class="stock-label good-label">
+                        GOOD STOCK
+                    </span>
+
+
+                    <strong>
+                        32 units
+                    </strong>
+
+
+                    <span>
+                        ₹23
+                    </span>
+
+                </div>
+
+
+
+                <div class="store-actions">
+
+                    <a
+                        href="tel:+919876543213"
+                        class="call-store-btn"
+                    >
+
+                        <i data-lucide="phone"></i>
+
+                        Call
+
+                    </a>
+
+
+                    <button
+                        class="map-store-btn"
+                        onclick="focusPharmacy('MediCare Pharmacy')"
+                    >
+
+                        <i data-lucide="map"></i>
+
+                        Map
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="modal-footer">
+
+            <i data-lucide="info"></i>
+
+            Stock availability is updated by participating pharmacies.
+            Please call the store before travelling.
+
+        </div>
+
+    </div>
+
+</div>
+</body>
+
+</html>
